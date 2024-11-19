@@ -22,7 +22,6 @@ ContactList.propTypes = {
             number: PropTypes.string,
         })
     ),
-    onDelete: PropTypes.func,
 };
 
 export default ContactList;

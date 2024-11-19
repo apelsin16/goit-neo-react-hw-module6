@@ -1,12 +1,16 @@
 import { useId } from 'react';
-import PropTypes from 'prop-types';
+import { changeFilter, selectNameFilter } from '../../redux/filterSlice';
 import css from './SearchBox.module.css';
+import { useSelector, useDispatch } from 'react-redux';
 
-const SearchBox = ({ filter, onFilter }) => {
+const SearchBox = () => {
     const searchId = useId();
+    const dispatch = useDispatch();
+
+    const filter = useSelector(selectNameFilter);
 
     const handleFilter = (e) => {
-        onFilter(e.target.value);
+        dispatch(changeFilter(e.target.value));
     };
 
     return (
@@ -21,11 +25,6 @@ const SearchBox = ({ filter, onFilter }) => {
             />
         </div>
     );
-};
-
-SearchBox.propTypes = {
-    filter: PropTypes.string,
-    onFilter: PropTypes.func,
 };
 
 export default SearchBox;

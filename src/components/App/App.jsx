@@ -1,10 +1,7 @@
 import ContactForm from '../ContactForm/ContactForm';
 import SearchBox from '../SearchBox/SearchBox';
 import ContactList from '../ContactList/ContactList';
-import {
-    addContact,
-    selectContacts,
-} from '../../redux/contactsSlice';
+import { addContact, selectContacts } from '../../redux/contactsSlice';
 import { changeFilter, selectNameFilter } from '../../redux/filterSlice';
 import css from './App.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -27,8 +24,11 @@ function App() {
         <div className={css.App}>
             <h1>Phonebook</h1>
             <ContactForm onAddContact={handleAddContact} />
-            <SearchBox filter={filter} onFilter={value => dispatch(changeFilter(value))} />
-            <ContactList contacts={filteredContacts}/>
+            <SearchBox
+                filter={filter}
+                onFilter={(value) => dispatch(changeFilter(value))}
+            />
+            <ContactList contacts={filteredContacts} />
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
@@ -70,10 +69,6 @@ const ContactForm = () => {
             </Form>
         </Formik>
     );
-};
-
-ContactForm.propTypes = {
-    onAddContact: PropTypes.func,
 };
 
 export default ContactForm;
