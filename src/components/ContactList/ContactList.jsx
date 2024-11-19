@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import Contact from '../Contact/Contact';
 import css from './ContactList.module.css';
 
-const ContactList = ({ contacts, onDelete }) => {
+const ContactList = ({ contacts }) => {
     return (
         <ul className={css.ContactList}>
             {contacts.map((contact) => (
                 <li key={contact.id} className={css.item}>
-                    <Contact contact={contact} onDelete={onDelete} />
+                    <Contact contact={contact} />
                 </li>
             ))}
         </ul>
